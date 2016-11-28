@@ -183,3 +183,28 @@
         (recur remaining ; recur on the tail
                (into final-body-parts ; put valid sets into final-body-parts
                        (set [(alien-matching-parts part)])))))))
+
+;; ex6
+;Create a function that generalizes symmetrize-body-parts and the function you created in Exercise 5. The new function should take a collection of body parts and the number of matching body parts to add. If you’re completely new to Lisp languages and functional programming, it probably won’t be obvious how to do this. If you get stuck, just move on to the next chapter and revisit the problem later.
+; Copying from: https://github.com/cataska/braveclojure/blob/master/src/braveclojure/excercises/ch3.clj 
+; to gain understanding, for now...
+(defn matching-part
+  [part index]
+  {:name (clojure.string/replace (:name part) #"^1-" (str index "-")) ; replace the number in the name with whichever index we are on
+   :size (:size part)}) ; grab the size from the part passed in
+
+
+(defn make-body-parts
+  [part count] ; take a part and a count for how many parts to make
+  (loop [i 1   ; define variables to loop with. i=index, results=[] empty vector @start
+         results []]
+    (if (> i count)  ; so, if we've indexed higher than count, end
+      results        ; and return the results vector
+      (recur (inc i) (conj results (matching-part part i)))))) ; recur on the index+1 and the vector, with the next part's index-name added
+
+(defn symmetrize-body-parts
+  [asym-body-parts number]  ; take the body parts list and a generalized number
+  (reduce (fn [final-body-parts part] ; run a reduce, with an anonymous function that runs our make-body-parts function with that number of parts  
+            (into final-body-parts (set (make-body-parts part number)))) ;; a make a set out of our results, so there are only unique values, and them place them into final body parts
+          [] ;; bind final-body-parts to the empty vector, []
+          asym-body-parts)) ;; bind each 'part' to incremental indices of the input arg, asym-body-parts, because we are running a reduce
