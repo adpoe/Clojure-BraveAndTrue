@@ -1,0 +1,270 @@
+; CIDER 0.8.1 (package: 20141120.1746) (Java 1.8.0_25, Clojure 1.8.0, nREPL 0.2.12)
+user> (or + -)
+#object[clojure.core$_PLUS_ 0x232695d2 "clojure.core$_PLUS_@232695d2"]
+user> ((or + -) 1 2 3)
+6
+user> (or nil -)
+#object[clojure.core$_ 0x1eaef512 "clojure.core$_@1eaef512"]
+user> ((or nil -) 1 2 3)
+-4
+user> ((and (= 1 1) +) 1  2 3)
+6
+user> ((first [+ 0]) 1 2 3)
+6
+user> (1 2 3 4)
+ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn  user/eval3477 (form-init7773782951552259506.clj:1)
+user> (inc 1.1)
+2.1
+user> (map inc [0 1 2 3])
+(1 2 3 4)
+user> (+ (inc 199) (/ 100 (- 7 2)))
+220 
+user> (tweet walking-on-sunshine-lyrics)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: tweet in this context, compiling:(/private/var/folders/r1/rpyrnf8d5nn3qn8fdntmx50c0000gn/T/form-init7773782951552259506.clj:1:1) 
+java.lang.NullPointerException: null
+ at java.util.concurrent.ConcurrentHashMap.get (ConcurrentHashMap.java:936)
+    clojure.lang.Namespace.find (Namespace.java:188)
+    clojure.core$find_ns.invokeStatic (core.clj:4000)
+    clojure.core$find_ns.invoke (core.clj:3996)
+    cider.nrepl.middleware.info$info_clj.invokeStatic (info.clj:113)
+    cider.nrepl.middleware.info$info_clj.invoke (info.clj:103)
+    cider.nrepl.middleware.info$info.invokeStatic (info.clj:132)
+    cider.nrepl.middleware.info$info.invoke (info.clj:126)
+    cider.nrepl.middleware.info$info_reply.invokeStatic (info.clj:217)
+    cider.nrepl.middleware.info$info_reply.invoke (info.clj:214)
+    cider.nrepl.middleware.info$wrap_info$fn__2680.invoke (info.clj:260)
+    clojure.tools.nrepl.middleware$wrap_conj_descriptor$fn__424.invoke (middleware.clj:22)
+    clojure.tools.nrepl.server$handle_STAR_.invokeStatic (server.clj:19)
+    clojure.tools.nrepl.server$handle_STAR_.invoke (server.clj:16)
+    clojure.tools.nrepl.server$handle$fn__830.invoke (server.clj:28)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1938)
+    clojure.lang.AFn.call (AFn.java:18)
+    java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+java.lang.NullPointerException: null
+ at java.util.concurrent.ConcurrentHashMap.get (ConcurrentHashMap.java:936)
+    clojure.lang.Namespace.find (Namespace.java:188)
+    clojure.core$find_ns.invokeStatic (core.clj:4000)
+    clojure.core$find_ns.invoke (core.clj:3996)
+    cider.nrepl.middleware.info$info_clj.invokeStatic (info.clj:113)
+    cider.nrepl.middleware.info$info_clj.invoke (info.clj:103)
+    cider.nrepl.middleware.info$info.invokeStatic (info.clj:132)
+    cider.nrepl.middleware.info$info.invoke (info.clj:126)
+    cider.nrepl.middleware.info$info_reply.invokeStatic (info.clj:217)
+    cider.nrepl.middleware.info$info_reply.invoke (info.clj:214)
+    cider.nrepl.middleware.info$wrap_info$fn__2680.invoke (info.clj:260)
+    clojure.tools.nrepl.middleware$wrap_conj_descriptor$fn__424.invoke (middleware.clj:22)
+    clojure.tools.nrepl.server$handle_STAR_.invokeStatic (server.clj:19)
+    clojure.tools.nrepl.server$handle_STAR_.invoke (server.clj:16)
+    clojure.tools.nrepl.server$handle$fn__830.invoke (server.clj:28)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1938)
+    clojure.lang.AFn.call (AFn.java:18)
+    java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+user> 
+> 
+> 
+> 
+CompilerException clojure.lang.ArityException: Wrong number of args (0) passed to: core/ns, compiling:(/Users/tony/Documents/_LEARNINGS/_PITT/BraveAndTrue/ch3/ex.clj:1:1) 
+java.lang.NullPointerException: null
+ at java.util.concurrent.ConcurrentHashMap.get (ConcurrentHashMap.java:936)
+    clojure.lang.Namespace.find (Namespace.java:188)
+    clojure.core$find_ns.invokeStatic (core.clj:4000)
+    clojure.core$find_ns.invoke (core.clj:3996)
+    cider.nrepl.middleware.info$info_clj.invokeStatic (info.clj:113)
+    cider.nrepl.middleware.info$info_clj.invoke (info.clj:103)
+    cider.nrepl.middleware.info$info.invokeStatic (info.clj:132)
+    cider.nrepl.middleware.info$info.invoke (info.clj:126)
+    cider.nrepl.middleware.info$info_reply.invokeStatic (info.clj:217)
+    cider.nrepl.middleware.info$info_reply.invoke (info.clj:214)
+    cider.nrepl.middleware.info$wrap_info$fn__2680.invoke (info.clj:260)
+    clojure.tools.nrepl.middleware$wrap_conj_descriptor$fn__424.invoke (middleware.clj:22)
+    clojure.tools.nrepl.server$handle_STAR_.invokeStatic (server.clj:19)
+    clojure.tools.nrepl.server$handle_STAR_.invoke (server.clj:16)
+    clojure.tools.nrepl.server$handle$fn__830.invoke (server.clj:28)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1938)
+    clojure.lang.AFn.call (AFn.java:18)
+    java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+java.lang.NullPointerException: null
+ at java.util.concurrent.ConcurrentHashMap.get (ConcurrentHashMap.java:936)
+    clojure.lang.Namespace.find (Namespace.java:188)
+    clojure.core$find_ns.invokeStatic (core.clj:4000)
+    clojure.core$find_ns.invoke (core.clj:3996)
+    cider.nrepl.middleware.info$info_clj.invokeStatic (info.clj:113)
+    cider.nrepl.middleware.info$info_clj.invoke (info.clj:103)
+    cider.nrepl.middleware.info$info.invokeStatic (info.clj:132)
+    cider.nrepl.middleware.info$info.invoke (info.clj:126)
+    cider.nrepl.middleware.info$info_reply.invokeStatic (info.clj:217)
+    cider.nrepl.middleware.info$info_reply.invoke (info.clj:214)
+    cider.nrepl.middleware.info$wrap_info$fn__2680.invoke (info.clj:260)
+    clojure.tools.nrepl.middleware$wrap_conj_descriptor$fn__424.invoke (middleware.clj:22)
+    clojure.tools.nrepl.server$handle_STAR_.invokeStatic (server.clj:19)
+    clojure.tools.nrepl.server$handle_STAR_.invoke (server.clj:16)
+    clojure.tools.nrepl.server$handle$fn__830.invoke (server.clj:28)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1938)
+    clojure.lang.AFn.call (AFn.java:18)
+    java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+> ((fn [x] (* x 3)) 8)
+> 
+> 
+> 
+> 
+shire.core> (-main)
+shire.core> 
+shire.core> asym-hobbit-body-parts
+[{:name "head", :size 3} {:name "left-eye", :size 1} {:name "left-ear", :size 1} {:name "mouth", :size 1} {:name "nose", :size 1} {:name "neck", :size 2} {:name "left-shoulder", :size 3} {:name "left-upper-arm", :size 3} {:name "chest", :size 10} {:name "back", :size 10} {:name "left-forearm", :size 3} {:name "abdomen", :size 6} {:name "left-kidney", :size 1} {:name "left-hand", :size 2} {:name "left-knee", :size 2} {:name "left-thigh", :size 4} {:name "left-lower-leg", :size 3} {:name "left-achilles", :size 1} {:name "left-foot", :size 2}]
+shire.core> (symmetrize-body-parts)
+ArityException Wrong number of args (0) passed to: core/symmetrize-body-parts  clojure.lang.AFn.throwArity (AFn.java:429)
+shire.core> (symmetrize-body-parts asym-body-parts)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: asym-body-parts in this context, compiling:(/private/var/folders/r1/rpyrnf8d5nn3qn8fdntmx50c0000gn/T/form-init7773782951552259506.clj:1:1) 
+shire.core> (syymetrize-body-parts asym-hobbit-body-parts)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: syymetrize-body-parts in this context, compiling:(/private/var/folders/r1/rpyrnf8d5nn3qn8fdntmx50c0000gn/T/form-init7773782951552259506.clj:1:1) 
+shire.core> (symetrize-body-parts asym-hobbit-body-parts)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: symetrize-body-parts in this context, compiling:(/private/var/folders/r1/rpyrnf8d5nn3qn8fdntmx50c0000gn/T/form-init7773782951552259506.clj:1:1) 
+shire.core> (symmetrize-body-parts asym-hobbit-body-parts)
+[{:name "head", :size 3} {:name "left-eye", :size 1} {:name "right-eye", :size 1} {:name "left-ear", :size 1} {:name "right-ear", :size 1} {:name "mouth", :size 1} {:name "nose", :size 1} {:name "neck", :size 2} {:name "left-shoulder", :size 3} {:name "right-shoulder", :size 3} {:name "right-upper-arm", :size 3} {:name "left-upper-arm", :size 3} {:name "chest", :size 10} {:name "back", :size 10} {:name "left-forearm", :size 3} {:name "right-forearm", :size 3} {:name "abdomen", :size 6} {:name "left-kidney", :size 1} {:name "right-kidney", :size 1} {:name "left-hand", :size 2} {:name "right-hand", :size 2} {:name "right-knee", :size 2} {:name "left-knee", :size 2} {:name "right-thigh", :size 4} {:name "left-thigh", :size 4} {:name "right-lower-leg", :size 3} {:name "left-lower-leg", :size 3} {:name "right-achilles", :size 1} {:name "left-achilles", :size 1} {:name "right-foot", :size 2} {:name "left-foot", :size 2}]
+shire.core> (loop [iteration 0])
+nil
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: iteration in this context, compiling:(/Users/tony/Documents/_LEARNINGS/_PITT/BraveAndTrue/ch3/shire/src/shire/core.clj:58:7) 
+shire.core> (loop [iteration 0])
+nil
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: recursive-printer in this context, compiling:(/Users/tony/Documents/_LEARNINGS/_PITT/BraveAndTrue/ch3/shire/src/shire/core.clj:1:1) 
+java.lang.NullPointerException: null
+ at java.util.concurrent.ConcurrentHashMap.get (ConcurrentHashMap.java:936)
+    clojure.lang.Namespace.find (Namespace.java:188)
+    clojure.core$find_ns.invokeStatic (core.clj:4000)
+    clojure.core$find_ns.invoke (core.clj:3996)
+    cider.nrepl.middleware.info$info_clj.invokeStatic (info.clj:113)
+    cider.nrepl.middleware.info$info_clj.invoke (info.clj:103)
+    cider.nrepl.middleware.info$info.invokeStatic (info.clj:132)
+    cider.nrepl.middleware.info$info.invoke (info.clj:126)
+    cider.nrepl.middleware.info$info_reply.invokeStatic (info.clj:217)
+    cider.nrepl.middleware.info$info_reply.invoke (info.clj:214)
+(loop [iteration 0]
+  (println (str "Iteration " iteration))
+  (if (> iteration 3)
+    (println "Goodbye!")
+    (recur (inc iteration))))    cider.nrepl.middleware.info$wrap_info$fn__2680.invoke (info.clj:260)
+    clojure.tools.nrepl.middleware$wrap_conj_descriptor$fn__424.invoke (middleware.clj:22)
+    clojure.tools.nrepl.server$handle_STAR_.invokeStatic (server.clj:19)
+    clojure.tools.nrepl.server$handle_STAR_.invoke (server.clj:16)
+    clojure.tools.nrepl.server$handle$fn__830.invoke (server.clj:28)
+    clojure.core$binding_conveyor_fn$fn__4676.invoke (core.clj:1938)
+    clojure.lang.AFn.call (AFn.java:18)
+    java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    java.lang.Thread.run (Thread.java:745)
+0
+1
+2
+3
+4
+Goodby!
+shire.core> (re-find #"left-" "aleft-eye")
+"left-"
+shire.core> (re-find #"left-" "left-eye")
+"left-"
+shire.core> (re-find #"^left-" "left-eye")
+nil
+shire.core> (re-find #"^left-" "left-eye")
+"left-"
+shire.core> (matching-part {:name "left-eye" :size 3})
+{:name "head", :size 3}
+shire.core> (matching-part {:name "left-eye" :size 3})
+{:name "right-eye", :size 3}
+shire.core> (reduce + [1 2 3 4])
+10
+shire.core> 
+shire.core> (reduce + 15 [1 2 3 4])
+25
+shire.core> (rest [1 2 3 4])
+1
+shire.core>  [1 2 3 4])
+[1 2 3 4]RuntimeException Unmatched delimiter: )  clojure.lang.Util.runtimeException (Util.java:221)
+shire.core> (rest [1 2 3 4])
+(2 3 4)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: me in this context, compiling:(/Users/tony/Documents/_LEARNINGS/_PITT/BraveAndTrue/ch3/shire/src/shire/core.clj:1:1) 
+shire.core> (def me "tony")
+#'shire.core/me
+shire.core> (str "hello there" me)
+
+"hello theretony"
+shire.core> (vector 1 2 3 4)
+[1 2 3 4]
+shire.core> '(1 2 3 4)
+(1 2 3 4)
+shire.core> (hash-map :name "tony" :job "programmer")
+{:name "tony", :job "programmer"}
+shire.core> (def hm (hash-map :name "tony" :job "programmer"))
+#'shire.core/hm
+shire.core> (:name hm)
+"tony"
+shire.core> (and true true 1)
+1
+shire.core> (hash-set "tony" "tony" "tony")
+#{"tony"}
+shire.core> (hash-set :name "tony" "tony" "tony")
+#{:name "tony"}
+shire.core> (hash-set :name "tony" :name "tony" :name "tony")
+#{:name "tony"}
+shire.core> (hash-set :name "tony" :name "toni" :name "toney")
+#{:name "toney" "tony" "toni"}
+shire.core> (hash-set :name "tony" :name1 "toni" :name2 "toney")
+#{:name2 :name "toney" "tony" "toni" :name1}shire.core> https://cs.pitt.edu/undergrads/internships
+CompilerException java.lang.RuntimeException: No such namespace: https:, compiling:(/private/var/folders/r1/rpyrnf8d5nn3qn8fdntmx50c0000gn/T/form-init7773782951552259506.clj:1:4324) 
+shire.core> (-main)
+Hello, World!
+nil
+shire.core> (-main)
+Hello, World!
+nil
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: number in this context, compiling:(/Users/tony/Documents/_LEARNINGS/_PITT/BraveAndTrue/ch3/shire/src/shire/core.clj:7:3) 
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: function in this context, compiling:(/Users/tony/Documents/_LEARNINGS/_PITT/BraveAndTrue/ch3/shire/src/shire/core.clj:96:1) 
+shire.core> (-main)
+Hello, World!
+200
+nil
+shire.core> (-main)
+Hello, World!
+200
+nil
+shire.core> (-main)
+Hello, World!
+201
+nil
+shire.core> (def dec3 (dec-maker 3))
+#'shire.core/dec3
+shire.core> (dec3 7)
+4
+shire.core> (mapset inc [1 1 2 2])
+ArityException Wrong number of args (2) passed to: core/mapset  clojure.lang.AFn.throwArity (AFn.java:429)
+shire.core> (mapset inc [1 1 2 2])
+#{3 2}
+shire.core> (def part1 (asym-hobbit-body-parts 0))
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: asym-body-parts in this context, compiling:(/private/var/folders/r1/rpyrnf8d5nn3qn8fdntmx50c0000gn/T/form-init7773782951552259506.clj:1:12) 
+shire.core> (asym-body-parts)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: asym-body-parts in this context, compiling:(/private/var/folders/r1/rpyrnf8d5nn3qn8fdntmx50c0000gn/T/form-init7773782951552259506.clj:1:1) 
+shire.core> (asym-hobbit-body-parts)
+ArityException Wrong number of args (0) passed to: PersistentVector  clojure.lang.AFn.throwArity (AFn.java:429)
+shire.core> asym-hobbit-body-parts
+[{:name "head", :size 3} {:name "left-eye", :size 1} {:name "left-ear", :size 1} {:name "mouth", :size 1} {:name "nose", :size 1} {:name "neck", :size 2} {:name "left-shoulder", :size 3} {:name "left-upper-arm", :size 3} {:name "chest", :size 10} {:name "back", :size 10} {:name "left-forearm", :size 3} {:name "abdomen", :size 6} {:name "left-kidney", :size 1} {:name "left-hand", :size 2} {:name "left-knee", :size 2} {:name "left-thigh", :size 4} {:name "left-lower-leg", :size 3} {:name "left-achilles", :size 1} {:name "left-foot", :size 2}]
+shire.core> (asym-hobbit-body-parts 0)
+{:name "head", :size 3}
+shire.core> (def part1 (asym-hobbit-body-parts 0))
+#'shire.core/part1
+shire.core> part1
+{:name "head", :size 3}
+shire.core> (alien-matching-part part1)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: alien-matching-part in this context, compiling:(/private/var/folders/r1/rpyrnf8d5nn3qn8fdntmx50c0000gn/T/form-init7773782951552259506.clj:1:1) 
+shire.core> 
