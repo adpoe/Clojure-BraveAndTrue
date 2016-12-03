@@ -4,10 +4,7 @@
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (def number 101)
-  (def numplus (add100 number))
-  (println  "Hello, World!")
-  (println (str numplus)))
+  (println  "Hello, World!"))
 
 ;; vector of maps
 (def asym-hobbit-body-parts [{:name "head" :size 3}
@@ -77,7 +74,7 @@
    :size (:size part)})
 
 ;; pattern --> process each element in a sequence and build a result is very common. so it's encapsualted in the reduce command
-; i.e. - sum with a reduce 
+; i.e. - sum with a reduce
 (reduce + [1 2 3 4])
 ; can also take an optional, initial, accumulator value
 (reduce + 15 [1 2 3 4])
@@ -92,7 +89,7 @@
 
 ;; ^^ tricky
 
-;; hobbit violence! 
+;; hobbit violence!
 (defn hit
   [asym-body-parts]
   (let [sym-parts (better-symmetrize-body-parts asym-body-parts) ; bind result of symmetrize to sym-parts
@@ -143,7 +140,7 @@
   (def mapped-vals (map fn coll))
   (set mapped-vals))
 
-; ex5 
+; ex5
 ; Create a function that’s similar to symmetrize-body-parts except that it has to work with weird space aliens with radial symmetry. Instead of two eyes, arms, legs, and so on, they have five.
 (defn alien-matching-parts
   [part]
@@ -186,7 +183,7 @@
 
 ;; ex6
 ;Create a function that generalizes symmetrize-body-parts and the function you created in Exercise 5. The new function should take a collection of body parts and the number of matching body parts to add. If you’re completely new to Lisp languages and functional programming, it probably won’t be obvious how to do this. If you get stuck, just move on to the next chapter and revisit the problem later.
-; Copying from: https://github.com/cataska/braveclojure/blob/master/src/braveclojure/excercises/ch3.clj 
+; Copying from: https://github.com/cataska/braveclojure/blob/master/src/braveclojure/excercises/ch3.clj
 ; to gain understanding, for now...
 (defn matching-part
   [part index]
@@ -204,7 +201,7 @@
 
 (defn symmetrize-body-parts
   [asym-body-parts number]  ; take the body parts list and a generalized number
-  (reduce (fn [final-body-parts part] ; run a reduce, with an anonymous function that runs our make-body-parts function with that number of parts  
+  (reduce (fn [final-body-parts part] ; run a reduce, with an anonymous function that runs our make-body-parts function with that number of parts
             (into final-body-parts (set (make-body-parts part number)))) ;; a make a set out of our results, so there are only unique values, and them place them into final body parts
           [] ;; bind final-body-parts to the empty vector, []
           asym-body-parts)) ;; bind each 'part' to incremental indices of the input arg, asym-body-parts, because we are running a reduce

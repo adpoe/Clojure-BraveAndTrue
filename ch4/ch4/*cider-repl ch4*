@@ -1,0 +1,29 @@
+; CIDER 0.8.1 (package: 20141120.1746) (Java 1.8.0_25, Clojure 1.8.0, nREPL 0.2.12)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: new=map in this context, compiling:(/Users/tony/Documents/_LEARNINGS/_PITT/BraveAndTrue/ch4/ch4/src/ch4/core.clj:62:11) 
+ch4.core> (range 1 10)
+(1 2 3 4 5 6 7 8 9)
+ch4.core> (vector (range 1 11))
+[(1 2 3 4 5 6 7 8 9 10)]
+ch4.core> (take 3 (range 1 10))
+(1 2 3)
+ch4.core> (drop 3 (range 1 10))
+(4 5 6 7 8 9)
+ch4.core> food-journal
+[{:month 1, :day 1, :human 5.3, :critter 2.3} {:month 1, :day 2, :human 5.1, :critter 2.0} {:month 2, :day 1, :human 4.9, :critter 2.1} {:month 2, :day 2, :human 5.0, :critter 2.5} {:month 3, :day 1, :human 4.2, :critter 3.3} {:month 3, :day 2, :human 4.0, :critter 3.8} {:month 4, :day 1, :human 3.7, :critter 3.9} {:month 4, :day 2, :human 3.7, :critter 3.6}]
+ch4.core> 
+ch4.core> (take-while #(< (:month %) 3) food-journal)
+({:month 1, :day 1, :human 5.3, :critter 2.3} {:month 1, :day 2, :human 5.1, :critter 2.0} {:month 2, :day 1, :human 4.9, :critter 2.1} {:month 2, :day 2, :human 5.0, :critter 2.5})
+ch4.core> (filter #(< (:human %) 5) food-journal)
+({:month 2, :day 1, :human 4.9, :critter 2.1} {:month 3, :day 1, :human 4.2, :critter 3.3} {:month 3, :day 2, :human 4.0, :critter 3.8} {:month 4, :day 1, :human 3.7, :critter 3.9} {:month 4, :day 2, :human 3.7, :critter 3.6})
+ch4.core> (filter #(< (:month %) 3) food-journal)
+({:month 1, :day 1, :human 5.3, :critter 2.3} {:month 1, :day 2, :human 5.1, :critter 2.0} {:month 2, :day 1, :human 4.9, :critter 2.1} {:month 2, :day 2, :human 5.0, :critter 2.5})
+ch4.core> (some #(and (> (:critter %) 3) %) food-journal)
+{:month 3, :day 1, :human 4.2, :critter 3.3}
+ch4.core> vampire-database
+{0 {:makes-blood-puns? false, :has-pulse? true, :name "McFishwich"}, 1 {:makes-blood-puns? false, :has-pulse? true, :name "McMackson"}, 2 {:makes-blood-puns? true, :has-pulse? false, :name "Damon Salvatore"}, 3 {:makes-blood-puns? true, :has-pulse? true, :name "Mickey Mouse"}}
+ch4.core> (time (vampire-related-details 0))
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: vampire-related-details in this context, compiling:(/private/var/folders/r1/rpyrnf8d5nn3qn8fdntmx50c0000gn/T/form-init2450005206242429074.clj:1:7) 
+ch4.core> (time (vampire-related-details 0))
+"Elapsed time: 1005.025034 msecs"
+{:makes-blood-puns? false, :has-pulse? true, :name "McFishwich"}
+ch4.core> (time (identify-vampire (range 0 1000000)))

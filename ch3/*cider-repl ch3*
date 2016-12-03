@@ -261,10 +261,71 @@ shire.core> asym-hobbit-body-parts
 [{:name "head", :size 3} {:name "left-eye", :size 1} {:name "left-ear", :size 1} {:name "mouth", :size 1} {:name "nose", :size 1} {:name "neck", :size 2} {:name "left-shoulder", :size 3} {:name "left-upper-arm", :size 3} {:name "chest", :size 10} {:name "back", :size 10} {:name "left-forearm", :size 3} {:name "abdomen", :size 6} {:name "left-kidney", :size 1} {:name "left-hand", :size 2} {:name "left-knee", :size 2} {:name "left-thigh", :size 4} {:name "left-lower-leg", :size 3} {:name "left-achilles", :size 1} {:name "left-foot", :size 2}]
 shire.core> (asym-hobbit-body-parts 0)
 {:name "head", :size 3}
-shire.core> (def part1 (asym-hobbit-body-parts 0))
+shire.core> (def part1 (asym-hobbit-body-parts 1))
 #'shire.core/part1
 shire.core> part1
 {:name "head", :size 3}
 shire.core> (alien-matching-part part1)
 CompilerException java.lang.RuntimeException: Unable to resolve symbol: alien-matching-part in this context, compiling:(/private/var/folders/r1/rpyrnf8d5nn3qn8fdntmx50c0000gn/T/form-init7773782951552259506.clj:1:1) 
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: alien-matching-part in this context, compiling:(/Users/tony/Documents/_LEARNINGS/_PITT/BraveAndTrue/ch3/shire/src/shire/core.clj:167:33) 
+shire.core> (alien-matching-part part1)
+{:name "head", :size 3}
+shire.core> (def part1 (asym-hobbit-body-parts 1))
+#'shire.core/part1
+shire.core> (alien-matching-part part1)
+{:name "right-eye", :size 1}
+shire.core> (set 1 [1 2 3 4])
+ArityException Wrong number of args (2) passed to: core/set  clojure.lang.AFn.throwArity (AFn.java:429)
+shire.core> (set 1 2)
+ArityException Wrong number of args (2) passed to: core/set  clojure.lang.AFn.throwArity (AFn.java:429)
+shire.core> (set [1 [1 2 3 4]])
+#{1 [1 2 3 4]}
+shire.core> (flatten [1 2 3 4])
+(1 2 3 4)
+shire.core> (set [1 (flatten [1 2 3 4])])
+#{1 (1 2 3 4)}
+shire.core> (set (into [] 1 [1 2 3 4]))
+ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn  clojure.core/transduce (core.clj:6598)
+shire.core> (into [] [1] [1 2 3 4])
+ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn  clojure.core/transduce (core.clj:6598)
+shire.core>  [1 2 3 4])
+[1 2 3 4]RuntimeException Unmatched delimiter: )  clojure.lang.Util.runtimeException (Util.java:221)
+shire.core>  [1 2 3 4])
+[1 2 3 4]RuntimeException Unmatched delimiter: )  clojure.lang.Util.runtimeException (Util.java:221)
+shire.core> (into (set) 1 2 3 4)
+ArityException Wrong number of args (0) passed to: core/set  clojure.lang.AFn.throwArity (AFn.java:429)
+shire.core> (into [] [1 2 3 4])
+[1 2 3 4]
+shire.core> (into [] 1 [1 2 3 4])
+ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn  clojure.core/transduce (core.clj:6598)
+shire.core> (into [] [1 [1 2 3 4]])
+[1 [1 2 3 4]]
+shire.core> (conj [1] [1 2 3 4])
+[1 [1 2 3 4]]
+shire.core> (conj [1 2 3 4] 1)
+[1 2 3 4 1]
+shire.core> (set (conj [1 2 3 4] 1))
+#{1 4 3 2}
+shire.core> (def part1 (asym-hobbit-body-parts 1))
+#'shire.core/part1
+shire.core> part1
+{:name "left-eye", :size 1}
+shire.core> [part1 part1]
+[{:name "left-eye", :size 1} {:name "left-eye", :size 1}]
+shire.core> (#"^left" "lefty")
+ClassCastException java.util.regex.Pattern cannot be cast to clojure.lang.IFn  shire.core/eval4169 (form-init7773782951552259506.clj:1)
+shire.core> (re-find #"^left" "lefteye")
+"left"
+shire.core> (alien-matching-parts part1)
+[{:name "-1eye", :size 1} {:name "-2eye", :size 1} {:name "-3eye", :size 1} {:name "-4eye", :size 1} {:name "-5eye", :size 1}]
+shire.core> (alien-matching-parts part1)
+[{:name "1-eye", :size 1} {:name "2-eye", :size 1} {:name "3-eye", :size 1} {:name "4-eye", :size 1} {:name "5-eye", :size 1}]
+shire.core> (alien-matching-parts (asym-hobbit-body-parts 0))
+[{:name "head", :size 3}]
+shire.core> (set (alien-matching-parts (asym-hobbit-body-parts 0))) 
+#{{:name "head", :size 3}}
+shire.core> (alien-symmetrize-body-parts hobbit-asym-body-parts)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: hobbit-asym-body-parts in this context, compiling:(/private/var/folders/r1/rpyrnf8d5nn3qn8fdntmx50c0000gn/T/form-init7773782951552259506.clj:1:1) 
+shire.core> (alien-symmetrize-body-parts asym-hobbit-body-parts)
+[[{:name "head", :size 3}] [{:name "1-eye", :size 1} {:name "2-eye", :size 1} {:name "3-eye", :size 1} {:name "4-eye", :size 1} {:name "5-eye", :size 1}] [{:name "1-ear", :size 1} {:name "2-ear", :size 1} {:name "3-ear", :size 1} {:name "4-ear", :size 1} {:name "5-ear", :size 1}] [{:name "mouth", :size 1}] [{:name "nose", :size 1}] [{:name "neck", :size 2}] [{:name "1-shoulder", :size 3} {:name "2-shoulder", :size 3} {:name "3-shoulder", :size 3} {:name "4-shoulder", :size 3} {:name "5-shoulder", :size 3}] [{:name "1-upper-arm", :size 3} {:name "2-upper-arm", :size 3} {:name "3-upper-arm", :size 3} {:name "4-upper-arm", :size 3} {:name "5-upper-arm", :size 3}] [{:name "chest", :size 10}] [{:name "back", :size 10}] [{:name "1-forearm", :size 3} {:name "2-forearm", :size 3} {:name "3-forearm", :size 3} {:name "4-forearm", :size 3} {:name "5-forearm", :size 3}] [{:name "abdomen", :size 6}] [{:name "1-kidney", :size 1} {:name "2-kidney", :size 1} {:name "3-kidney", :size 1} {:name "4-kidney", :size 1} {:name "5-kidney", :size 1}] [{:name "1-hand", :size 2} {:name "2-hand", :size 2} {:name "3-hand", :size 2} {:name "4-hand", :size 2} {:name "5-hand", :size 2}] [{:name "1-knee", :size 2} {:name "2-knee", :size 2} {:name "3-knee", :size 2} {:name "4-knee", :size 2} {:name "5-knee", :size 2}] [{:name "1-thigh", :size 4} {:name "2-thigh", :size 4} {:name "3-thigh", :size 4} {:name "4-thigh", :size 4} {:name "5-thigh", :size 4}] [{:name "1-lower-leg", :size 3} {:name "2-lower-leg", :size 3} {:name "3-lower-leg", :size 3} {:name "4-lower-leg", :size 3} {:name "5-lower-leg", :size 3}] [{:name "1-achilles", :size 1} {:name "2-achilles", :size 1} {:name "3-achilles", :size 1} {:name "4-achilles", :size 1} {:name "5-achilles", :size 1}] [{:name "1-foot", :size 2} {:name "2-foot", :size 2} {:name "3-foot", :size 2} {:name "4-foot", :size 2} {:name "5-foot", :size 2}]]
 shire.core> 
