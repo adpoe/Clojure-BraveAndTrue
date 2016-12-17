@@ -1,0 +1,19 @@
+; CIDER 0.8.1 (package: 20141120.1746) (Java 1.8.0_25, Clojure 1.8.0, nREPL 0.2.12)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: analysis in this context, compiling:(/Users/tony/Documents/_LEARNINGS/_PITT/BraveAndTrue/ch5/ch5/src/ch5/core.clj:30:3) 
+ch5.core> (c-int character)
+10
+ch5.core> (c-str character)
+4
+ch5.core> (c-dex character)
+5
+ch5.core> (sleepy-identity "Mr Fantastico")
+"Mr Fantastico"
+ch5.core> (def memo-sleepy-identity (memoize sleepy-identity))
+#'ch5.core/memo-sleepy-identity
+ch5.core> memo-sleepy-identity
+#object[clojure.core$memoize$fn__5708 0x5221c0dc "clojure.core$memoize$fn__5708@5221c0dc"]
+ch5.core> (memo-sleepy-identity "Mr Fantastico")
+"Mr Fantastico"
+ch5.core> (memo-sleepy-identity "Mr Fantastico")
+"Mr Fantastico"
+ch5.core> 
